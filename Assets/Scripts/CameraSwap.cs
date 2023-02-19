@@ -60,14 +60,18 @@ public class CameraSwap : MonoBehaviour
         //turns vignette on and off when in range.
         if (!headOn)
         {
-            if ((lightCamera.GetComponentInParent<LampRange>().inRange))
+            if (lightCamera)
             {
-                VignetteGlow.VignetteOn();
+                if ((lightCamera.GetComponentInParent<LampRange>().inRange))
+                {
+                    VignetteGlow.VignetteOn();
+                }
+                else
+                {
+                    VignetteGlow.VignetteOff();
+                }
             }
-            else
-            {
-                VignetteGlow.VignetteOff();
-            }
+            
         }
         
 
