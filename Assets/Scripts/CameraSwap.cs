@@ -9,10 +9,10 @@ public class CameraSwap : MonoBehaviour
     private Camera lightCamera;
     public GameObject lightSource;
     public bool lookingAtCamera = false;
-    public bool headOn = true;
+    static public bool headOn = true;
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         
     }
@@ -20,19 +20,27 @@ public class CameraSwap : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(lookingAtCamera);
+        Debug.Log(headOn);
 
         if(!headOn)
         {
             if (Input.GetKey(KeyCode.Q))
             {
-                playerCamera.enabled = true;
-                lightCamera.enabled = false;
-                headOn = true;
+                if (LampRange.inRange)
+                {
+                    playerCamera.enabled = true;
+                    lightCamera.enabled = false;
+                    headOn = true;
+                }
+                
 
             }
         }
-        
+
+        if (lightCamera.enabled == true)
+        {
+            lightCamera.GetComponentInParent<LampRange>().enabled = true;
+        }
             
     }
 

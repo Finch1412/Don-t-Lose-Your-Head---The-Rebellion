@@ -4,22 +4,20 @@ using UnityEngine;
 
 public class CameraTurning : MonoBehaviour
 {
-    private float xRotation;
-    private float yRotation;
-    public GameObject upDown;
-    public GameObject leftRight;
-    public Camera thisCamera;
+    
+    public GameObject playerCamera;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerCamera = GameObject.FindGameObjectWithTag("MainCamera");
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.rotation = upDown.transform.rotation;
+        transform.rotation = playerCamera.transform.rotation;
          
 
         
