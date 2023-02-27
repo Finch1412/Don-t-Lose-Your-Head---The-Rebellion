@@ -74,15 +74,18 @@ public class CameraSwap : MonoBehaviour
             
         }
         
-
-        if (lookingAtCamera == true)
+        if (headOn)
         {
-            VignetteGlow.VignetteOn();
+            if (lookingAtCamera == true)
+            {
+                VignetteGlow.VignetteOn();
+            }
+            else
+            {
+                VignetteGlow.VignetteOff();
+            }
         }
-        else
-        {
-            VignetteGlow.VignetteOff();
-        }
+        
 
 
 
