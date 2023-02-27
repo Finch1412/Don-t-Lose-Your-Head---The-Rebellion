@@ -6,6 +6,8 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class VignetteGlow : MonoBehaviour
 {
+    private LampRange LampRange;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,10 @@ public class VignetteGlow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(LampRange.inRange == true)
+        {
+
+        }
         
     }
 
