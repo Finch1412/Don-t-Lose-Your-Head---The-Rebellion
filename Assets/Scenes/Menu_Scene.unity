@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.3718593, g: 1, b: 0, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: aad3e92c6ab830343ba684e22418482d, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 34b8af96e1ea901478193a4231ed3d89, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.15698045, g: 0.12695673, b: 0.14820823, a: 1}
+  m_IndirectSpecularColor: {r: 0.1174195, g: 0.06719547, b: 0.055459626, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -277,7 +277,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp(Demo) 1 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4699570705212904196, guid: a4fd254eb0718c449a1c00bfface2b89, type: 3}
+    - {fileID: -668395810700627318, guid: a4fd254eb0718c449a1c00bfface2b89, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a4fd254eb0718c449a1c00bfface2b89, type: 3}
 --- !u!1 &828894568
@@ -374,6 +376,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 24.06, y: 0.727, z: 24.588}
+--- !u!1 &874602353 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4699570705212904255, guid: a4fd254eb0718c449a1c00bfface2b89, type: 3}
+  m_PrefabInstance: {fileID: 208482995}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &874602354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874602353}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d4e100615babfe49bff9f0709812ce4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneToLoad: Starting_WhiteBox
 --- !u!1 &949537820
 GameObject:
   m_ObjectHideFlags: 0
@@ -472,6 +492,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: -90}
+--- !u!1 &1107602104 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4699570705212904255, guid: a4fd254eb0718c449a1c00bfface2b89, type: 3}
+  m_PrefabInstance: {fileID: 1928532735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1107602105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107602104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55984e928a63a1949810c3cea1205763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1136854040
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,11 +721,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4472367644307490460, guid: 4bedfd2a5b531894098b5a070427772d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4472367645037072149, guid: 4bedfd2a5b531894098b5a070427772d, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4472367644307490436, guid: 4bedfd2a5b531894098b5a070427772d, type: 3}
+    - {fileID: 4472367644307490459, guid: 4bedfd2a5b531894098b5a070427772d, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bedfd2a5b531894098b5a070427772d, type: 3}
 --- !u!1001 &1928532735
@@ -747,6 +790,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp(Demo) 1 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4699570705212904196, guid: a4fd254eb0718c449a1c00bfface2b89, type: 3}
+    - {fileID: -668395810700627318, guid: a4fd254eb0718c449a1c00bfface2b89, type: 3}
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: a4fd254eb0718c449a1c00bfface2b89, type: 3}
