@@ -17,10 +17,15 @@ public class VignetteGlow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(LampRange.inRange == true)
+        if (LampRange)
         {
+            if (LampRange.inRange == true)
+            {
 
+            }
         }
+        
+       
         
     }
 
