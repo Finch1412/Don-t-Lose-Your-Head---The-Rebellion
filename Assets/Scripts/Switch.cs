@@ -30,12 +30,13 @@ public class Switch : MonoBehaviour
         {
             if (switchOn)
             {
-                switchOn = false;
-                activation.SetActive(switchOn);
+                activation.SetActive(false);
 
                 switchLever.Play(anim, 0, 0.0f);
                 otherObj.Play(otherAnim, 0, 0.0f);
-
+                
+                switchOn = false;
+                
             }
             //if (!switchOn)
             //{

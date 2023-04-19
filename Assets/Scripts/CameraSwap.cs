@@ -13,6 +13,8 @@ public class CameraSwap : MonoBehaviour
     static public bool headOn = true;
     [SerializeField]
     private VignetteGlow VignetteGlow;
+    public GameObject headOffUI;
+    //public GameObject headOnUI;
 
 
     // Start is called before the first frame update
@@ -65,10 +67,12 @@ public class CameraSwap : MonoBehaviour
                 if ((lightCamera.GetComponentInParent<LampRange>().inRange))
                 {
                     VignetteGlow.VignetteOn();
+                    //headOnUI.SetActive(true);
                 }
                 else
                 {
                     VignetteGlow.VignetteOff();
+                    //headOnUI.SetActive(false);
                 }
             }
             
@@ -93,10 +97,12 @@ public class CameraSwap : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        
         if (headOn)
         {
             if (other.transform.tag == "LightCamera")
             {
+                headOffUI.SetActive(true);
                 lookingAtCamera = true;
                 lightCamera = other.gameObject.GetComponent<GetLightCamera>().GetCamera();
                 
@@ -118,10 +124,12 @@ public class CameraSwap : MonoBehaviour
     }
     private void OnTriggerExit(Collider other)
     {
+        
         if (other.transform.tag == "LightCamera")
         {
             lookingAtCamera = false;
-            
+            headOffUI.SetActive(false);
+
         }
     }
 
