@@ -6,10 +6,10 @@ public class Switch : MonoBehaviour
 {
     public GameObject activation;
     private bool switchOn = true;
-    public float time = 2f;
-    public float timeScore = 2f;
     [SerializeField] private Animator switchLever;
-    [SerializeField] private string animation = "Animation";
+    [SerializeField] private string anim = "Animation";
+    [SerializeField] private Animator otherObj;
+    [SerializeField] private string otherAnim = "Animation";
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +25,7 @@ public class Switch : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        Debug.Log(other);
         if (Input.GetKey(KeyCode.E))
         {
             if (switchOn)
@@ -32,8 +33,9 @@ public class Switch : MonoBehaviour
                 switchOn = false;
                 activation.SetActive(switchOn);
 
-                switchLever.Play(animation, 0, 0.0f);
-                
+                switchLever.Play(anim, 0, 0.0f);
+                otherObj.Play(otherAnim, 0, 0.0f);
+
             }
             //if (!switchOn)
             //{
