@@ -7,7 +7,9 @@ public class CameraSwap : MonoBehaviour
 {
 
     public Camera playerCamera;
+    public AudioListener playerListener;
     private Camera lightCamera;
+    private AudioListener lightListener;
     public GameObject lightSource;
     public bool lookingAtCamera = false;
     static public bool headOn = true;
@@ -39,7 +41,9 @@ public class CameraSwap : MonoBehaviour
                 if (lightCamera.GetComponentInParent<LampRange>().inRange)
                 {
                     playerCamera.enabled = true;
+                    playerListener.enabled = true;
                     lightCamera.enabled = false;
+                    lightListener.enabled = false;
                     headOn = true;
                     source.PlayOneShot(headReturnSFX);
 
@@ -110,6 +114,7 @@ public class CameraSwap : MonoBehaviour
                 headOffUI.SetActive(true);
                 lookingAtCamera = true;
                 lightCamera = other.gameObject.GetComponent<GetLightCamera>().GetCamera();
+                lightListener = other.gameObject.GetComponent<GetLightCamera>().GetAudioListener();
                 
 
                 //vignette stuff.
@@ -117,7 +122,9 @@ public class CameraSwap : MonoBehaviour
                 if (Input.GetKey(KeyCode.E))
                 {
                     playerCamera.enabled = false;
+                    playerListener.enabled = false;
                     lightCamera.enabled = true;
+                    lightListener.enabled = true;
                     source.PlayOneShot(headPlacedSFX); 
                     headOn = false;
                 }

@@ -113,12 +113,12 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 15
+  Priority: 0
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 30
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 0
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0

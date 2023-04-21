@@ -180,7 +180,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4699570704665379774}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!114 &4699570704665379770
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -387,6 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightCamera: {fileID: 4699570704665379769}
+  lightListener: {fileID: 4699570704665379768}
 --- !u!114 &-668395810700627318
 MonoBehaviour:
   m_ObjectHideFlags: 0

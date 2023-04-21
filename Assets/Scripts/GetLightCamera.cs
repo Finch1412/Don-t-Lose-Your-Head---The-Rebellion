@@ -6,11 +6,15 @@ public class GetLightCamera : MonoBehaviour
 {
     [SerializeField]
     private Camera lightCamera;
+    [SerializeField]
+    private AudioListener lightListener;
     
     public Camera GetCamera()
     {
-        return lightCamera; 
+        return lightCamera;
     }
-
-
+    public AudioListener GetAudioListener()
+    {
+        return lightListener;
+    }
 }
