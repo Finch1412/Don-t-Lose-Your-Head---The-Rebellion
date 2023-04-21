@@ -766,7 +766,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -1401,7 +1401,7 @@ PrefabInstance:
     - target: {fileID: 6647285056970033739, guid: b7fbde41362ccf04ba388b321f7141bd, type: 3}
       propertyPath: otherClip
       value: 
-      objectReference: {fileID: 8300000, guid: 7b06f3babc28ffa4687f65bb18009d82, type: 3}
+      objectReference: {fileID: 8300000, guid: 87447a8b769ff904b9c1526b1b7c4080, type: 3}
     - target: {fileID: 6647285056970033739, guid: b7fbde41362ccf04ba388b321f7141bd, type: 3}
       propertyPath: othersource
       value: 
