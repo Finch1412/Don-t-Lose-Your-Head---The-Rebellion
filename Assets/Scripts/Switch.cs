@@ -37,13 +37,14 @@ public class Switch : MonoBehaviour
 
                 switchOn = false;
                 source.PlayOneShot(switchClip);
-                othersource.PlayOneShot(otherClip);
+                
                 switchLever.Play(anim, 0, 0.0f);
                 activation.SetActive(false);
                 otherObj.Play(otherAnim, 0, 0.0f);
-                
-                
-                
+                othersource.PlayOneShot(otherClip);
+
+
+
             }
             //if (!switchOn)
             //{
