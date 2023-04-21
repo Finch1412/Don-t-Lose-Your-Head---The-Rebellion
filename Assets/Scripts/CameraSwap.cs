@@ -15,6 +15,10 @@ public class CameraSwap : MonoBehaviour
     private VignetteGlow VignetteGlow;
     public GameObject headOffUI;
     //public GameObject headOnUI;
+    public AudioSource source;
+    public AudioClip headPlacedSFX;
+    public AudioClip headReturnSFX;
+
 
 
     // Start is called before the first frame update
@@ -37,6 +41,7 @@ public class CameraSwap : MonoBehaviour
                     playerCamera.enabled = true;
                     lightCamera.enabled = false;
                     headOn = true;
+                    source.PlayOneShot(headReturnSFX);
 
 
                 }
@@ -113,6 +118,7 @@ public class CameraSwap : MonoBehaviour
                 {
                     playerCamera.enabled = false;
                     lightCamera.enabled = true;
+                    source.PlayOneShot(headPlacedSFX); 
                     headOn = false;
                 }
             }

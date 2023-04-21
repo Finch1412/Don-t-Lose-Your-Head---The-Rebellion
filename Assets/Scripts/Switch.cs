@@ -10,11 +10,15 @@ public class Switch : MonoBehaviour
     [SerializeField] private string anim = "Animation";
     [SerializeField] private Animator otherObj;
     [SerializeField] private string otherAnim = "Animation";
+    public AudioSource source;
+    public AudioClip switchClip;
+    public AudioSource othersource;
+    public AudioClip otherClip;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        source = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -30,13 +34,15 @@ public class Switch : MonoBehaviour
         {
             if (switchOn)
             {
-                
 
+                switchOn = false;
+                source.PlayOneShot(switchClip);
+                othersource.PlayOneShot(otherClip);
                 switchLever.Play(anim, 0, 0.0f);
                 activation.SetActive(false);
                 otherObj.Play(otherAnim, 0, 0.0f);
                 
-                switchOn = false;
+                
                 
             }
             //if (!switchOn)
