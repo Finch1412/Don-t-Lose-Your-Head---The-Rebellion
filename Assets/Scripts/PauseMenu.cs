@@ -9,6 +9,8 @@ public class PauseMenu : MonoBehaviour
     //public GameObject player;
     public static bool isPaused;
     public string menu;
+    public AudioSource settingButton;
+    public AudioClip errorSound;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +53,7 @@ public class PauseMenu : MonoBehaviour
 
     public void GoToMenu()
     {
+        isPaused = false;
         Time.timeScale = 1f;
         SceneManager.LoadScene(menu);
     }
@@ -58,6 +61,11 @@ public class PauseMenu : MonoBehaviour
     public void QuitGame()
     {
         Application.Quit();
+    }
+
+    public void Settings()
+    {
+        settingButton.PlayOneShot(errorSound);
     }
 
 }

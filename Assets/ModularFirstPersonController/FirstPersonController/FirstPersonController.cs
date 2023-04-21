@@ -147,6 +147,10 @@ public class FirstPersonController : MonoBehaviour
             sprintRemaining = sprintDuration;
             sprintCooldownReset = sprintCooldown;
         }
+        if (lockCursor)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
     }
 
     void Start()
