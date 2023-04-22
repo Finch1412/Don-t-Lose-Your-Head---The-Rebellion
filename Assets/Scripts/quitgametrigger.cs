@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class quitgametrigger : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class quitgametrigger : MonoBehaviour
     {
         if(other.transform.tag == "Player")
         {
-            Application.Quit();
+            SceneManager.LoadScene(0);
         }
     }
 }
