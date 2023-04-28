@@ -26,7 +26,7 @@ public class CameraSwap : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-
+        headOn = true;
     }
 
     // Update is called once per frame

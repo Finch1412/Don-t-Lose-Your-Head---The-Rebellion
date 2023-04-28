@@ -21,7 +21,10 @@ public class quitgametrigger : MonoBehaviour
     {
         if(other.transform.tag == "Player")
         {
-            SceneManager.LoadScene(0);
+            if (CameraSwap.headOn)
+            {
+                SceneManager.LoadScene(0);
+            }
         }
     }
 }
