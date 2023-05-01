@@ -20,6 +20,7 @@ public class CameraSwap : MonoBehaviour
     public AudioSource source;
     public AudioClip headPlacedSFX;
     public AudioClip headReturnSFX;
+    public GameObject playerbody;
 
 
 
@@ -27,6 +28,8 @@ public class CameraSwap : MonoBehaviour
     void Awake()
     {
         headOn = true;
+        playerbody = GameObject.FindGameObjectWithTag("PlayerBody");
+
     }
 
     // Update is called once per frame
@@ -46,6 +49,7 @@ public class CameraSwap : MonoBehaviour
                     lightListener.enabled = false;
                     headOn = true;
                     source.PlayOneShot(headReturnSFX);
+                    playerbody.transform.rotation = playerCamera.transform.rotation;
 
 
                 }

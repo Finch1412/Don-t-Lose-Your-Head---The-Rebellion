@@ -27,6 +27,8 @@ public class FirstPersonController : MonoBehaviour
     public bool cameraCanMove = true;
     public float mouseSensitivity = 2f;
     public float maxLookAngle = 50f;
+    private Animator animator;
+
 
     // Crosshair
     public bool lockCursor = true;
@@ -61,6 +63,7 @@ public class FirstPersonController : MonoBehaviour
 
     // Internal Variables
     private bool isWalking = false;
+    public GameObject playerbody;
 
     #region Sprint
 
@@ -151,10 +154,12 @@ public class FirstPersonController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
+        playerbody = GameObject.FindGameObjectWithTag("PlayerBody");
     }
 
     void Start()
     {
+        animator = GetComponent<Animator>();
         if(lockCursor)
         {
             Cursor.lockState = CursorLockMode.Locked;
@@ -388,16 +393,30 @@ public class FirstPersonController : MonoBehaviour
         {
             // Calculate how fast we should be moving
             Vector3 targetVelocity = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
+            targetVelocity.Normalize();
+            Vector3 localForward = playerbody.transform.worldToLocalMatrix.MultiplyVector(transform.forward);
 
             // Checks if player is walking and isGrounded
             // Will allow head bob
             if (targetVelocity.x != 0 || targetVelocity.z != 0 && isGrounded)
             {
                 isWalking = true;
+                if (isWalking)
+                {
+                    animator.SetBool("Moving", true);
+                    if (!CameraSwap.headOn)
+                    {
+                        playerbody.transform.forward = rb.velocity;
+                    }
+                }
             }
             else
             {
                 isWalking = false;
+                if (!isWalking)
+                {
+                    animator.SetBool("Moving", false);
+                }
             }
 
             // All movement calculations shile sprint is active

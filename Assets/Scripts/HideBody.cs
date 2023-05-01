@@ -5,7 +5,7 @@ using UnityEngine;
 public class HideBody : MonoBehaviour
 {
     [SerializeField]
-    private MeshRenderer mesh;
+    private SkinnedMeshRenderer mesh;
 
    
     // Start is called before the first frame update
