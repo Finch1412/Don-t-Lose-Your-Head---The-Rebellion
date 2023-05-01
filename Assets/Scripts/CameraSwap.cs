@@ -49,7 +49,8 @@ public class CameraSwap : MonoBehaviour
                     lightListener.enabled = false;
                     headOn = true;
                     source.PlayOneShot(headReturnSFX);
-                    playerbody.transform.rotation = playerCamera.transform.rotation;
+                    float yRot = playerCamera.transform.eulerAngles.y;
+                    playerbody.transform.eulerAngles = new Vector3(playerbody.transform.eulerAngles.x, yRot, playerbody.transform.eulerAngles.z);
 
 
                 }
