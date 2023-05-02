@@ -154,6 +154,7 @@ public class FirstPersonController : MonoBehaviour
         {
             Cursor.lockState = CursorLockMode.Locked;
         }
+        //assigns the mesh of the player model to playerbody.
         playerbody = GameObject.FindGameObjectWithTag("PlayerBody");
     }
 
@@ -403,7 +404,9 @@ public class FirstPersonController : MonoBehaviour
                 isWalking = true;
                 if (isWalking)
                 {
+                    //Used to transition to and from walking animation in animator.
                     animator.SetBool("Moving", true);
+                    //sets the player body to rotate based on the direction of movement while the player head is off.
                     if (!CameraSwap.headOn)
                     {
                         playerbody.transform.forward = rb.velocity;

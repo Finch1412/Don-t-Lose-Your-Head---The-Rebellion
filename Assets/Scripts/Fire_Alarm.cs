@@ -17,7 +17,7 @@ public class Fire_Alarm : MonoBehaviour
     {
         
     }
-
+    //allows for water doors to be enabled by walking through a trigger box (Can be used for other prefabs)
     private void OnTriggerEnter(Collider other)
     {
         sprinkeler.SetActive(true);

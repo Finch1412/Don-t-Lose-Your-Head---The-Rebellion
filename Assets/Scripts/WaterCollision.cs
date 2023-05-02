@@ -20,6 +20,7 @@ public class WaterCollision : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //Disables the collider of the water doors while the players head is off. The use of the "Water" tag allows for using impassable water in forms of things other than sprinklers.
        if(collision.transform.tag == "Water")
         {
             if (!CameraSwap.headOn)

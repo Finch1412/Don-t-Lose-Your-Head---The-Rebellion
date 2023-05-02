@@ -5,8 +5,9 @@ using UnityEngine;
 public class ErrorSound : MonoBehaviour
 {
     public AudioClip errorSound;
-    public AudioSource errorSource;   
-    public bool canBePressed;
+    public AudioSource errorSource;  
+    [SerializeField]
+    private bool canBePressed;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +21,7 @@ public class ErrorSound : MonoBehaviour
     }
     private void OnTriggerStay(Collider other)
     {
+        //Makes an error sound when the player interacts with a menu lemp that currently lacks funtionality.
         if (canBePressed)
         {
             if (Input.GetKey(KeyCode.E))
@@ -32,6 +34,7 @@ public class ErrorSound : MonoBehaviour
         }
 
     }
+    //This function is invoked in the funtion above with a delay to only allow the button to make the noise every 0.5 seconds.
     public void ErrorPress()
     {
         canBePressed = true;

@@ -17,6 +17,7 @@ public class HideBody : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Hides the body of the player while the players head is on but makes it visible when the head it off.
         if (CameraSwap.headOn)
         {
             mesh.enabled = false;

@@ -5,17 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class QuitGame : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    //Used to quit the game from the manu scene. Assigned to Quit lamp.
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetKey(KeyCode.E))

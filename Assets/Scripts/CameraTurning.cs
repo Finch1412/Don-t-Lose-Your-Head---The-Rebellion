@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraTurning : MonoBehaviour
 {
-    
+    //Script that makes all lamp child carmeras mimic the rotation of the main player camera.
     public GameObject playerCamera;
     
 
@@ -18,12 +18,5 @@ public class CameraTurning : MonoBehaviour
     void Update()
     {
         transform.rotation = playerCamera.transform.rotation;
-         
-
-        
-        
-
-
-           
     }
 }

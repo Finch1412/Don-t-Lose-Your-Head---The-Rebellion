@@ -18,6 +18,7 @@ public class LampRange : MonoBehaviour
     {
         //Debug.Log(inRange);
     }
+    //while this script is enabled on a lamp, it makes sure the player is close enough to the lamp to be able to interact with it.
     private void OnTriggerEnter(Collider other)
     {
         if(other.transform.tag == "Player")

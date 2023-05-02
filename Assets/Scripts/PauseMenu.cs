@@ -17,12 +17,14 @@ public class PauseMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Makes sure the game isn't pasued on start.
         pauseMenu.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Escape assigned as pause button.
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (isPaused)
@@ -36,6 +38,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
+    //Sets pause as true while enabling the pause menu panel and freezing in game time.
     public void PauseGame()
     {
         pauseMenu.SetActive(true);
@@ -46,6 +49,7 @@ public class PauseMenu : MonoBehaviour
         controlsOpen = false;
     }
 
+    //Closes the pause menu and unfreezes time.
     public void ResumeGame()
     {
         pauseMenu.SetActive(false);
@@ -56,6 +60,7 @@ public class PauseMenu : MonoBehaviour
 
     }
 
+    //Unfreezes time and transitions back the main game menu.
     public void GoToMenu()
     {
         isPaused = false;
@@ -63,16 +68,19 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(menu);
     }
 
+    //Quits the game.
     public void QuitGame()
     {
         Application.Quit();
     }
 
+    //Plays an error sound.
     public void Settings()
     {
         settingButton.PlayOneShot(errorSound);
     }
 
+    //opens and closed the controls panel within the pause menu.
     public void Controls()
     {
         if (!controlsOpen)
